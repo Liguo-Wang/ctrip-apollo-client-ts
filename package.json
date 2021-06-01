@@ -1,6 +1,6 @@
 {
   "name": "ctrip-apollo-client-ts",
-  "version": "1.0.01",
+  "version": "1.0.2",
   "description": "Ctrip Apollo config client.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
