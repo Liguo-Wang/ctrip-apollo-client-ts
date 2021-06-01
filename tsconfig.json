@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+      "lib": ["es6", "ES2018"],
+      "outDir": "lib",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "target": "ES2018",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "declaration": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "stripInternal": true,
+      "pretty": true,
+      "strictNullChecks": true,
+      "noUnusedLocals": true,
+      "downlevelIteration": true,
+      "removeComments": true,
+      "types": ["reflect-metadata"]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+      "lib",
+      "node_modules",
+      "**/*.spec.ts"
+  ]
+}

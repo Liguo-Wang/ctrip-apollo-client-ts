@@ -1,0 +1,1 @@
+export type ValueType = 'json' | 'string' | 'number' | 'array' | 'boolean' | 'date' | 'datetime' | 'time';
