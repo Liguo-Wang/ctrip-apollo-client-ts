@@ -1,4 +1,4 @@
-import { createClient } from '../src';
+import { createConnection } from '../src';
 import axios from 'axios';
 import { getConfigurationStorage } from '../src/configuration.storage';
 jest.mock('axios');
@@ -13,7 +13,7 @@ describe('Apollo Client.', () => {
       return Promise.reject(new Error('not found'));
     });
     try {
-      await createClient({
+      await createConnection({
         url: 'localhost',
         namespaceNames: ['ns1', 'ns2'],
         appId: 'application_test_id',
@@ -84,7 +84,7 @@ describe('Apollo Client.', () => {
       }
       return Promise.reject(new Error('not found'));
     });
-    await createClient(clientOptions);
+    await createConnection(clientOptions);
     const namespace = clientOptions.namespaceNames[0];
     expect(getConfigurationStorage().getConfig(namespace)).toEqual(
       config.configurations,
@@ -167,7 +167,7 @@ describe('Apollo Client.', () => {
       }
       return Promise.reject(new Error('not found'));
     });
-    await createClient(clientOptions);
+    await createConnection(clientOptions);
     const namespace = clientOptions.namespaceNames[0];
     expect(getConfigurationStorage().getConfig(namespace)).toEqual(
       updateConfig.configurations,

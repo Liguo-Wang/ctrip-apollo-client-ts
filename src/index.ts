@@ -18,11 +18,11 @@ export { PropMetadataArgs } from './interfaces/prop-metadata-args.interface';
 // Functions
 // -------------------------------------------------------------------------
 /**
- * create Apollo client
- * @param options
- * @returns ApolloClient
+ * create Apollo connection
+ * @param options ApolloClientOptions
+ * @returns void
  */
-export const createClient = async (
+export const createConnection = async (
   options: ApolloClientOptions,
 ): Promise<void> => {
   const client = new ApolloClient(options);
