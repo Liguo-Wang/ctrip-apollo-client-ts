@@ -1,8 +1,8 @@
-export interface ApolloClientOptions {
+export interface BaseOptions {
   /**
    * The address of the Apollo configuration service.
    */
-  url: string;
+  configServerUrl: string;
 
   /**
    * application ID.
@@ -11,30 +11,41 @@ export interface ApolloClientOptions {
 
   /**
    * The cluster name of Apollo.
-   * Default is normally passed in.
+   * Default - default.
    */
   clusterName: string;
 
-  /**
-   * The names of namespace.
-   */
-  namespaceNames: string[];
+  secret?: string;
 
   /**
    * The IP of the machine where the Apollo application is deployed. 
    * This parameter is optional and is used to implement grayscale publishing.
    */
   ip?: string;
-
-  
-  secret?: string;
 }
 
+export interface NamespaceOptions extends BaseOptions {
+  /**
+   * The name of namespace.
+   * Default: application
+   */
+  namespaceName: string;
+}
+
+export interface ApolloClientOptions extends BaseOptions {
+  /**
+   * The names of namespace.
+   * Default ['application']
+   */
+  namespaceNames?: Function[];
+}
+
+export type Configurations = Record<string, string>;
 export interface ApolloConfigResponse {
   appId: string;
   cluster: string;
   namespaceName: string;
-  configurations: Record<string, any>;
+  configurations: Configurations;
   releaseKey: string;
 }
 

@@ -1,11 +1,12 @@
 import get from 'get-value';
-import { ApolloConfigResponse } from './interfaces/apollo-client.interface';
+import { ApolloConfigResponse, Configurations } from '../interfaces/apollo-client.interface';
 
+type ConfigValuesMap = Record<string, Configurations>
 export class ConfigurationStorage {
   // -------------------------------------------------------------------------
   // Properties
   // -------------------------------------------------------------------------
-  private configValues: Record<string, any> = Object.create(null);
+  private configValues: ConfigValuesMap  = Object.create(null);
   private releaseKeys: Map<string, string> = new Map();
 
   // -------------------------------------------------------------------------
@@ -16,16 +17,16 @@ export class ConfigurationStorage {
     this.setReleaseKey(data.namespaceName, data.releaseKey);
   }
 
-  public getAllConfigs<T>(): T {
-    return this.configValues as T;
+  public getAllConfigs(): ConfigValuesMap {
+    return this.configValues;
   }
 
-  public getConfig<T>(namespace: string): T {
-    return get(this.configValues, namespace);
+  public getConfig(namespaceName: string): Configurations | undefined {
+    return this.configValues[namespaceName];
   }
 
-  public getConfigValue<T>(key: string, namespace: string): T | undefined {
-    const config = this.configValues[namespace];
+  public getConfigValue<T>(key: string, namespaceName: string = 'application'): T | undefined {
+    const config = this.configValues[namespaceName];
     if (!config) return undefined;
     return get(config, key);
   }

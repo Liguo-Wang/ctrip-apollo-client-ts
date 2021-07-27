@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { PROPERTY_METADATA } from '../constant';
 import { PropMetadataArgs } from '../interfaces/prop-metadata-args.interface';
 import { PropOptions } from '../interfaces/prop-options.interface';

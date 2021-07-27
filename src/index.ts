@@ -24,7 +24,8 @@ export { PropMetadataArgs } from './interfaces/prop-metadata-args.interface';
  */
 export const createConnection = async (
   options: ApolloClientOptions,
-): Promise<void> => {
+): Promise<ApolloClient> => {
   const client = new ApolloClient(options);
   await client.start();
+  return client;
 };
