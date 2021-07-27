@@ -21,7 +21,7 @@ import {ApolloConfiguration, createConnection, Props} from '.'
     appId: 'apolloclient',
     configServerUrl: 'http://106.54.227.205:8080',
     "clusterName": "default",
-    "namespaceNames":[ RedisConfig ],
+    "namespaces":[ RedisConfig ],
     'secret':'35be8a4868c748ec96faef3e326adad5'
   });
 

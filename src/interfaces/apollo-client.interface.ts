@@ -37,7 +37,7 @@ export interface ApolloClientOptions extends BaseOptions {
    * The names of namespace.
    * Default ['application']
    */
-  namespaceNames?: Function[];
+  namespaces?: Function[];
 }
 
 export type Configurations = Record<string, string>;

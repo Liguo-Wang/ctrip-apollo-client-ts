@@ -12,13 +12,13 @@ export class ApolloClient {
   public readonly cluster: Cluster;
 
   constructor(options: ApolloClientOptions) {
-    const { clusterName = 'default', namespaceNames = [] } = options;
+    const { clusterName = 'default', namespaces = [] } = options;
     this.options = {
       ...options,
       clusterName,
       ip: ip.address(),
     };
-    this.cluster = new Cluster(this.options, namespaceNames);
+    this.cluster = new Cluster(this.options, namespaces);
   }
 
   // -------------------------------------------------------------------------
