@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["es6", "ES2018", "DOM"],
-    "outDir": "lib",
+    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "target": "ES2018",
@@ -24,5 +24,5 @@
     "types": ["reflect-metadata"]
   },
   "include": ["src/**/*", "example/**/*", ".eslintrc.js"],
-  "exclude": ["lib", "node_modules", "**/*.spec.ts"]
+  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
 }
