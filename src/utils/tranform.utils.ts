@@ -34,7 +34,7 @@ export function prepareConfigValue(value: string | undefined, propMetadata?: Pro
     ret = Number(value);
   }
 
-  if (propMetadata.transformer) ret = propMetadata.transformer(value);
+  if (propMetadata.transformer) ret = propMetadata.transformer(ret);
 
   return ret;
 }
