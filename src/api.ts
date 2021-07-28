@@ -57,9 +57,6 @@ export async function longPollingRequest(args: LongPollingArgs): Promise<Respons
     timeout,
     appId,
     secret,
-  }).catch(e => {
-    console.log('====>>', e)
-    throw e;
   });
   if (status === 304) {
     return { noChange: true };
